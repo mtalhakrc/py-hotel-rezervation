@@ -1,0 +1,53 @@
+@import "variable.scss";
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: $font-family;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243,244,245,var(--tw-bg-opacity));
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+.container{
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter;
+  padding-left: $gutter;
+  position: relative;
+}
+
+.text{
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  color: $color-navy;
+  height: $finger-size;
+  padding-right: 10px;
+  padding-left: 10px;
+  border:none;
+  border-radius: $border-radius;
+  appearance: none;
+}
+.button{
+  height: $finger-size;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: $border-radius;
+  color: white;
+
+  &-navy{
+
+    background-color: $color-navy;
+  }
+}
+
+//<style>
+//@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+//</style>

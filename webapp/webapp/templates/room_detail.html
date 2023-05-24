@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="detail" >
+    <div class="container">
+
+    <div class="slider">
+        <div class="carousel" data-flickity='{ "autoPlay": true }'>
+        {% for image in images %}
+            <img class="carousel-cell" src="{% static image.image %}" alt="">
+        {% endfor %}
+        </div>
+    </div>
+        <div class="content">
+            <h3 class="content-title">{{room.name}}</h3>
+            <h5 class="content-type">{{room.type}}</h5>
+            <p class="content-description">
+                {{room.description}}
+            </p>
+            <h3 class="content-price">{{room.price}} <span>TL</span></h3>
+            <div class="content-buttons">
+                {% if room.reservation_id == None  %}
+                {%  include "components/buttons/button-primary.html"  with text="Rezerve Et" %}
+                {% else %}
+                {%  include "components/buttons/button-disabled.html"  with text="Rezerve Et" %}
+                {% endif %}
+            </div>
+        </div>
+
+
+        <div class="features">
+            {% include "components/features/features.html" with features=features %}
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock content %}

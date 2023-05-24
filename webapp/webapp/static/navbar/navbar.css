@@ -1,0 +1,23 @@
+.navbar {
+  position: relative;
+  height: 50px;
+  background-color: white; }
+  .navbar .container {
+    display: flex;
+    height: 100%;
+    font-size: 0.86em;
+    overflow-x: scroll;
+    align-items: center; }
+    @media (min-width: 768px) {
+      .navbar .container {
+        overflow-x: hidden; } }
+  .navbar-item {
+    display: flex;
+    margin-right: 20px;
+    height: 100%;
+    align-items: center; }
+  @media (min-width: 768px) {
+    .navbar {
+      padding-left: 0; } }
+
+/*# sourceMappingURL=navbar.css.map */

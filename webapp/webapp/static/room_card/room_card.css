@@ -1,0 +1,130 @@
+.card {
+  --tw-ring-offset-shadow: 0 0 transparent;
+  margin-left: auto;
+  width: 100%;
+  border-radius: 99999%;
+  color: #000000;
+  max-width: 100%; }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 100%; }
+    @media (min-width: 768px) {
+      .card-body {
+        flex-direction: row; } }
+    .card-body img {
+      width: 100%;
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px;
+      object-fit: cover; }
+      @media (min-width: 768px) {
+        .card-body img {
+          width: 30%; } }
+    .card-body .content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px; }
+      @media (min-width: 768px) {
+        .card-body .content {
+          justify-content: space-around; } }
+    .card-body button {
+      background-color: #009ef7;
+      border: none;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 3px;
+      font-size: 0.86em;
+      cursor: pointer; }
+      .card-body button:hover {
+        background-color: #007dc4; }
+  .card-detail {
+    display: flex;
+    flex-direction: column; }
+    .card-detail-title {
+      color: #000;
+      margin-top: 10px; }
+    .card-detail-type {
+      font-size: 0.86em;
+      margin-bottom: 0.5rem; }
+    .card-detail-comments {
+      margin-bottom: 0.5rem;
+      font-size: 0.86em; }
+    .card-detail-location {
+      font-size: 0.86em; }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.86em;
+    flex-direction: column; }
+    @media (min-width: 768px) {
+      .card-footer {
+        flex-direction: row; } }
+    .card-footer button {
+      margin-top: 10px;
+      width: 100%; }
+      @media (min-width: 768px) {
+        .card-footer button {
+          width: auto;
+          margin-top: 0; } }
+  .card-features {
+    display: none;
+    --tw-text-opacity: 1;
+    width: 100%;
+    background: white; }
+    .card-features-options {
+      display: flex;
+      align-items: center;
+      width: 100%; }
+      .card-features-options button {
+        flex-grow: 1;
+        background: white;
+        border: none;
+        color: rgba(219, 221, 225, var(--tw-text-opacity));
+        padding: 0.5rem 1rem;
+        border-radius: 3px;
+        font-size: 0.86em;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(219, 221, 225, var(--tw-text-opacity)); }
+      .card-features-options button.active {
+        color: #000;
+        border-bottom: 2px solid #000; }
+    .card-features-content {
+      display: grid;
+      grid-auto-flow: row dense;
+      gap: 1.2rem;
+      padding: 20px 10px 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      width: 100%;
+      color: rgba(219, 221, 225, var(--tw-text-opacity));
+      font-size: 0.86em; }
+      .card-features-content svg {
+        fill: rgba(219, 221, 225, var(--tw-text-opacity)); }
+      .card-features-content-item {
+        display: flex;
+        align-items: center;
+        gap: 10px; }
+
+.arrow-svg-container {
+  position: relative; }
+
+.arrow-down {
+  position: absolute;
+  cursor: pointer;
+  transform: translateY(-90%);
+  left: 95%; }
+
+.card-features-show {
+  display: block; }
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  color: white;
+  background: red; }
+
+/*# sourceMappingURL=room_card.css.map */

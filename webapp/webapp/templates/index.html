@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% load sass_tags %}
+  <link href="{% sass_src 'room_detail.scss' %}" rel="stylesheet" type="text/css" />
+
+
+{% block content %}
+
+<div class="container">
+    <!-- {% include "components/pick_a_date.html" %} -->
+
+    <h1>Odalar</h1>
+    {% if rooms %}
+        {% for room in rooms %}
+        {% include "components/room_card/room_card.html" with room=room %}
+
+    {% endfor %}
+    {% else %}
+        <h1>Aradığınız kriterlere uygun oda bulunamadı.</h1>
+    {% endif %}
+
+</div>
+{% endblock %}

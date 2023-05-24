@@ -1,0 +1,50 @@
+{% load static %}
+{% load sass_tags %}
+
+ <link href="{% sass_src 'header/header.scss' %}" rel="stylesheet" type="text/css" />
+
+<div class="header">
+    <div class="container">
+      <a class="header-logo" href="">
+        <img src="{% static 'images/logo.svg' %}" alt="logo" />
+      </a>
+
+      <button type="button" class="header-switch" id="header-switch">
+        <svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    {% if is_open == true %}
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"/></svg>
+        {% endif %}
+      </button>
+
+      <div id="header-menu" class="header-menu">
+        <div class="header-menu-user">
+          <a href="">Kaydol</a>
+          <a href="">Giriş</a>
+        </div>
+
+        <a class="header-menu-button" href="">Mülkünüzü listeleyin</a>
+
+        <div class="header-menu-helper">
+          <select name="">
+            <option value="">TR</option>
+          </select>
+          <select name="" id="">
+            <option value="">EN</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    //ALLAHIM YARDIM ET KANSER OLMAK ÜZEREYİM
+    let is_open = false;
+    document.getElementById("header-switch").onclick= ()=>{
+      is_open = !is_open;
+      if(is_open){
+        document.getElementById("header-menu").classList.add("header-menu-show");
+      } else{
+          document.getElementById("header-menu").classList.remove("header-menu-show");
+
+      }
+    }
+  </script>

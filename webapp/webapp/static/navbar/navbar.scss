@@ -1,0 +1,27 @@
+@import "../variable";
+@import "../mixin";
+.navbar {
+  position: relative;
+  height: 50px;
+  background-color:white;
+
+  .container {
+    display: flex;
+    height: 100%;
+    font-size: $font-size-small;
+    overflow-x: scroll;
+    align-items: center;
+    @include mq("tablet") {
+      overflow-x: hidden;
+    }
+  }
+  &-item {
+    display: flex;
+    margin-right: 20px;
+    height: 100%;
+    align-items: center;
+  }
+  @include mq("tablet") {
+    padding-left: 0;
+  }
+}

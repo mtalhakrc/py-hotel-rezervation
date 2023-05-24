@@ -1,0 +1,28 @@
+{% load static %}
+{% load sass_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezervasyon Yap | Kolay Rezervasyon!</title>
+    <link rel="stylesheet" href="{% static 'normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'flickity.css' %}">
+    <script src="{% static 'flickity.js' %}"></script>
+    <link href="{% sass_src 'global.scss' %}" rel="stylesheet" type="text/css" />
+
+    <link href="{% sass_src 'room_detail.scss' %}" rel="stylesheet" type="text/css" />
+
+
+    <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0">
+</head>
+<body>
+{% include "components/header/header.html" %}
+{% include "components/navbar/navbar.html" %}
+{% block content %} {% endblock %}
+
+</body>
+</html>
+
+<script>
+
+</script>

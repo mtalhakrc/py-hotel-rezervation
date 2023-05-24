@@ -1,0 +1,97 @@
+{% load static %}
+{% load sass_tags %}
+
+
+
+  <link href="{% sass_src 'room_card/room_card.scss' %}" rel="stylesheet" type="text/css" />
+  <div class="card" style="margin-top: 15px;">
+      <div class="card-body">
+<!--          https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen,f_auto,h_248,q_auto,w_481/itemimages/17/36/17366806_v3.jpeg-->
+          <img src="{% static room.image %}" alt="">
+          <div class="content">
+          <div class="card-detail">
+              <a href="{% url 'room-detail' room.slug %}">
+              <h3 class="card-detail-title">{{room.name}}</h3>
+                  </a>
+              <div class="card-detail-type" >{{room.type}}</div>
+              <div class="card-detail-comments" >Değerlendirme yok</div>
+              <div class="arrow-svg-container">
+              <div class="card-detail-location" >{{room.location}}</div>
+              <div class="card-detail-description" >{{room.description}}</div>
+                <svg class="arrow-down" fill="#000000" height="16px" width="16px" version="1.1" id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 viewBox="0 0 330 330" xml:space="preserve">
+<path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
+	c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
+	s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+</svg>
+
+
+              </div>
+          </div>
+
+          <div class="card-footer">
+                <div class="footer-price">
+                    <span class="footer-price-title">Gecelik Fiyat: </span>
+                    <span class="footer-price-value">{{room.price}} TL</span>
+                </div>
+              {% if room.is_reserved %}
+                <button class="disabled" disabled="true" > REZERVE EDİLMİŞ</button>
+
+            {% else  %}
+                              <button >HEMEN REZERVE ET</button>
+
+            {% endif %}
+
+          </div>
+
+          </div>
+      <div id="card-features" class="card-features">
+          <div class="card-features-options">
+              <button type="button"  class="active">Bilgi</button>
+              <button type="button"  disabled >Fotoğraflar</button>
+              <button type="button" disabled >Yorumlar</button>
+              <button type="button" disabled>Fırsatlar</button>
+          </div>
+          <div class="card-features-content">
+                <span class="card-features-content-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="rgb(219,221,225);"><path d="M13.77 16.73a.54.54 0 01-.36-.14 2 2 0 00-2.82 0 .51.51 0 01-.71 0 .5.5 0 010-.71 3.08 3.08 0 014.24 0 .5.5 0 010 .71.52.52 0 01-.35.14z"></path><path d="M15.18 15.32a.49.49 0 01-.35-.15 4.1 4.1 0 00-5.66 0 .5.5 0 01-.71 0 .51.51 0 010-.71 5 5 0 017.08 0 .51.51 0 010 .71.51.51 0 01-.36.15zM19.42 11.08a.5.5 0 01-.35-.15 10 10 0 00-14.14 0 .5.5 0 01-.71-.71 11 11 0 0115.56 0 .51.51 0 010 .71.51.51 0 01-.36.15z"></path><path d="M20.84 9.66a.47.47 0 01-.35-.15 12 12 0 00-17 0 .49.49 0 01-.7-.7 13 13 0 0118.38 0 .5.5 0 01-.35.85zM13.77 16.73a.54.54 0 01-.36-.14 2 2 0 00-2.82 0 .51.51 0 01-.71 0 .5.5 0 010-.71 3.08 3.08 0 014.24 0 .5.5 0 010 .71.52.52 0 01-.35.14zM16.6 13.9a.54.54 0 01-.36-.14 6 6 0 00-8.48 0 .51.51 0 01-.71 0 .5.5 0 010-.71 7 7 0 019.9 0 .5.5 0 010 .71.54.54 0 01-.35.14z"></path><path d="M18 12.49a.47.47 0 01-.35-.15 8 8 0 00-11.32 0 .49.49 0 01-.7-.7 9 9 0 0112.72 0 .48.48 0 010 .7.47.47 0 01-.35.15z"></path><circle cx="12" cy="19" r="1"></circle></g></svg>
+                    <span>Ücretsiz Wifi</span>
+
+                </span>
+                <span class="card-features-content-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M2.5 12H4v5a2 2 0 002 2h12a2 2 0 002-2v-5h1.5a.5.5 0 000-1H20V9h.5a.5.5 0 000-1H20a.94.94 0 00-.3-.72 9.91 9.91 0 00-5.58-2.15H14A.49.49 0 0014 5a2 2 0 00-4 0 .37.37 0 000 .11h-.15a9.9 9.9 0 00-5.54 2.17A1 1 0 004 8h-.5a.5.5 0 000 1H4v2H2.5a.5.5 0 000 1zM11 5a1 1 0 012 0h-2zm-1 1.12a17.65 17.65 0 014 0A9 9 0 0119 8H5a9 9 0 015-1.88zM5 9h14v8a1 1 0 01-1 1H6a1 1 0 01-1-1zM21.5 20h-19a.5.5 0 000 1h19a.5.5 0 000-1z"></path></g></svg>
+                    <span>Mutfak</span>
+                </span>
+                <span class="card-features-content-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><path d="M21.35 12.74L16.58 14 13 12l3.54-2 4.77 1.22a.51.51 0 00.63-.35.49.49 0 00-.37-.61l-3.76-1 3-1.65A.49.49 0 0021 7a.53.53 0 00-.71-.18l-3 1.64 1-3.61a.45.45 0 00-.05-.38.53.53 0 00-.95.12l-1.23 4.58-3.54 2V7.21L16 3.85a.48.48 0 000-.7.53.53 0 00-.74 0l-2.74 2.64V2.5a.52.52 0 00-1 0v3.29L8.73 3.15a.53.53 0 00-.74 0 .48.48 0 000 .7l3.49 3.36v3.92l-3.54-2-1.28-4.54a.52.52 0 00-1 .26l1 3.61-3-1.64A.53.53 0 003 7a.49.49 0 00.19.68l3 1.65-3.76 1a.49.49 0 00-.37.61.51.51 0 00.63.35L7.42 10 11 12l-3.58 2-4.77-1.26a.51.51 0 00-.63.35.49.49 0 00.37.61l3.76 1-3 1.65A.49.49 0 003 17a.53.53 0 00.71.18l3-1.64-1 3.61a.52.52 0 001 .26l1.28-4.58 3.54-2v3.92L8 20.15a.48.48 0 000 .7.53.53 0 00.74 0l2.75-2.64v3.29a.52.52 0 001 0v-3.29l2.75 2.64a.55.55 0 00.37.15.53.53 0 00.37-.15.48.48 0 000-.7l-3.49-3.36v-3.92l3.54 2 1.28 4.58a.51.51 0 00.63.35.5.5 0 00.37-.61l-1-3.61 3 1.64A.53.53 0 0021 17a.49.49 0 00-.19-.68l-3-1.65 3.76-1a.51.51 0 00.32-.23.46.46 0 00.05-.38.51.51 0 00-.59-.32z" fill="currentColor"></path></svg>
+                    <span>Klima</span>
+                </span>
+                <span class="card-features-content-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1 11h-3v5.46a.5.5 0 11-1 0V5.54A.52.52 0 019.5 5H13a4 4 0 010 8zm0-7h-3v6h3a3 3 0 000-6z" fill="currentColor"></path></svg>
+                    <span>Otopark</span>
+                </span>
+                <span class="card-features-content-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><path d="M20 18v-3h.5a.5.5 0 000-1H17V7h.5a.5.5 0 000-1H17V4a1 1 0 00-1-1H8a1 1 0 00-1 1v2h-.5a.5.5 0 000 1H7v7H3.5a.5.5 0 000 1H4v3a1 1 0 00-1 1v1a1 1 0 001 1h16a1 1 0 001-1v-1a1 1 0 00-1-1zm-1-3v3h-2v-3zm-8 0h2v3h-2zm-1 3H8v-3h2zm4-3h2v3h-2zM8 4h8v2H8zm0 3h8v7H8zm-3 8h2v3H5zm15 5H4v-1h16z" fill="currentColor"></path></svg>
+                    <span>Balkon</span>
+                </span>
+                <span class="card-features-content-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="pointer-events-none max-h-full max-w-full"><g fill="currentColor"><path d="M18.71 10a7 7 0 100 4 8.05 8.05 0 00.21-1 6.29 6.29 0 000-2 8.05 8.05 0 00-.21-1zM12 18a6 6 0 115.65-8h-1.07a5 5 0 00-9.21.12A5.08 5.08 0 007 12a3.87 3.87 0 000 .49A5 5 0 0016.58 14h1.07A6 6 0 0112 18zm2-7v2.09A1.49 1.49 0 0111.5 12 2.5 2.5 0 009 9.5h-.11a4 4 0 016.55.49H15A1 1 0 0014 11zm1 3h.44A4 4 0 018 12a3.87 3.87 0 01.23-1.28A1.47 1.47 0 019 10.5a1.5 1.5 0 011.5 1.5 2.5 2.5 0 002.5 2.5 2.47 2.47 0 001.59-.59A1 1 0 0015 14zm1.9-1H15v-2h2.91a6.64 6.64 0 01.09 1 6.64 6.64 0 01-.09 1z"></path><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm1 16a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1h14a1 1 0 011 1z"></path></g></svg>
+                    <span>Çamaşır Makinesi</span>
+                </span>
+          </div>
+      </div>
+
+  </div>
+
+<script>
+    let show = false;
+    document.getElementById("arrow-down").onclick = function (){
+        show = !show
+        if (show){
+            document.getElementById("card-features").classList.add("card-features-show");
+        }else {
+          document.getElementById("card-features").classList.remove("card-features-show");
+        }
+    }
+
+</script>

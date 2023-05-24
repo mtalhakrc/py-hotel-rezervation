@@ -1,0 +1,39 @@
+.card-features {
+  --tw-text-opacity: 1;
+  width: 100%;
+  background: white;
+  padding: 20px; }
+  .card-features-options {
+    display: flex;
+    align-items: center;
+    width: 100%; }
+    .card-features-options button {
+      flex-grow: 1;
+      background: white;
+      border: none;
+      color: rgba(219, 221, 225, var(--tw-text-opacity));
+      padding: 0.5rem 1rem;
+      border-radius: 3px;
+      font-size: 0.86em;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(219, 221, 225, var(--tw-text-opacity)); }
+    .card-features-options button.active {
+      color: #000;
+      border-bottom: 2px solid #000; }
+  .card-features-content {
+    display: grid;
+    grid-auto-flow: row dense;
+    gap: 1.2rem;
+    padding: 20px 10px 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    color: rgba(219, 221, 225, var(--tw-text-opacity));
+    font-size: 0.86em; }
+    .card-features-content svg {
+      fill: rgba(219, 221, 225, var(--tw-text-opacity)); }
+    .card-features-content-item {
+      display: flex;
+      align-items: center;
+      gap: 10px; }
+
+/*# sourceMappingURL=features.css.map */

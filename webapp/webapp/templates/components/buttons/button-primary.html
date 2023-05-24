@@ -1,0 +1,87 @@
+<div>
+    <button class="btn btn-primary w-100"> {{text }}</button>
+</div>
+
+<style>
+    :root{
+    --kt-primary: #009ef7;
+    --kt-primary-inverse: #fff;
+    --kt-body-color: #181c32;
+    }
+    .btn:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon) {
+    border: 0;
+    padding: calc(0.775rem + 1px) calc(1.5rem + 1px);
+}
+
+.btn:not(.btn-shadow):not(.shadow):not(.shadow-sm):not(.shadow-lg) {
+    box-shadow: none!important;
+}
+.btn.btn-primary, .btn.btn-primary .svg-icon, .btn.btn-primary i, .btn.btn-primary.dropdown-toggle:after {
+    color: var(--kt-primary-inverse);
+}
+.btn.btn-primary {
+    border-color: var(--kt-primary);
+    background-color: var(--kt-primary);
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.btn {
+    --bs-btn-color: var(--kt-body-color);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: transparent;
+    outline: none!important;
+
+}
+.w-100{
+    width: 100%;
+}
+.btn-primary {
+    --bs-btn-color: #000;
+    --bs-btn-bg: #009ef7;
+    --bs-btn-border-color: #009ef7;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #26adf8;
+    --bs-btn-hover-border-color: #1aa8f8;
+    --bs-btn-focus-shadow-rgb: 0,134,210;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #33b1f9;
+    --bs-btn-active-border-color: #1aa8f8;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    --bs-btn-disabled-color: #000;
+    --bs-btn-disabled-bg: #009ef7;
+    --bs-btn-disabled-border-color: #009ef7;
+}
+.btn {
+    --bs-btn-padding-x: 1.5rem;
+    --bs-btn-padding-y: 0.775rem;
+    --bs-btn-font-size: 1.1rem;
+    --bs-btn-font-weight: 500;
+    --bs-btn-line-height: 1.5;
+    --bs-btn-color: #181c32;
+    --bs-btn-border-width: 1px;
+    --bs-btn-border-radius: 0.475rem;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-box-shadow: inset 0 1px 0 hsla(0,0%,100%,.15),0 1px 1px rgba(0,0,0,.075);
+    --bs-btn-disabled-opacity: 0.65;
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb),.5);
+    display: inline-block;
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+    font-family: var(--bs-btn-font-family);
+    font-size: var(--bs-btn-font-size);
+    font-weight: var(--bs-btn-font-weight);
+    line-height: var(--bs-btn-line-height);
+    color: var(--bs-btn-color);
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+    border-radius: var(--bs-btn-border-radius);
+    background-color: var(--bs-btn-bg);
+    box-shadow: var(--bs-btn-box-shadow);
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+</style>

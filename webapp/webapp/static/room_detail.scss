@@ -1,0 +1,49 @@
+@import "variable";
+@import "mixin";
+
+
+.detail{
+  margin-top: 2em;
+  .container{
+  }
+  .slider{
+    width: 100%;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+
+    &-title{
+      font-size: 1.2em;
+      color:black;
+      margin-top: 40px;
+      margin-bottom: 0;
+
+    }
+    &-type{
+        font-size: 1em;
+        color: $color-gray;
+        margin-top:0.875em;
+        margin-bottom: 0;
+    }
+    &-description{
+        font-size: 1em;
+        color: $color-gray;
+        margin-top:0.875em;
+    }
+    &-price{
+        font-size: 1.5em;
+        color: $color-primary;
+        margin-top:0.875em;
+        margin-bottom: 0;
+    }
+    &-buttons{
+      width: 100%;
+      margin-top: 1.5em;
+    }
+
+  }
+  .features{
+    margin-top: 20px;
+  }
+}

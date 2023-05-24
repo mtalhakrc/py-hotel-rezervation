@@ -1,0 +1,20 @@
+{% load static %}
+{% load sass_tags %}
+ <link href="{% sass_src 'footer/footer.scss' %}" rel="stylesheet" type="text/css" />
+
+<div class="footer">
+    <div class="images container">
+        <img src="{% static 'images/logo.svg' %}" alt="logo"  class="footer-ets-image"/>
+        <div class="footer-sponsor-images">
+            <a href=""><img src="{% static 'images/didim-tur.svg' %}" alt="logo"  class="footer-sponsor-images-item"/></a>
+            <a href=""><img src="{% static 'images/ets-mice.svg' %}" alt="logo"  class="footer-sponsor-images-item"/></a>
+            <a href=""><img src="{% static 'images/ets-go.svg' %}" alt="logo"  class="footer-sponsor-images-item"/></a>
+            <a href=""><img src="{% static 'images/odamax-logo-footer.svg' %}" alt="logo"  class="footer-sponsor-images-item"/></a>
+            <a href=""><img src="{% static 'images/otelpuan.svg' %}" alt="logo"  class="footer-sponsor-images-item"/></a>
+            <a href=""><img src="{% static 'images/ucuzabilet.svg' %}" alt="logo"  class="footer-sponsor-images-item"/></a>
+        </div>
+    </div>
+    <div class="container">
+        <span class="description">kullanılan logolar eğitim-öğretim amaçlıdır. Ticari veya kopyalama amacı gütmemektedir.</span>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+[type="date"] {
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+@import "../variable.scss";
+@import "../mixin.scss";
+
+.datepicker-label{
+  display: inline-block;
+  font-size: $font-size-small;
+  width: 30%;
+  @include mq("tablet"){
+    width: auto;
+  }
+
+
+}
+.datepicker{
+  margin-left: 5px;
+  font: 13px/1.4 Geneva, 'Lucida Sans';
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 5px;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+  flex-grow: 1;
+
+  width: 100%;
+
+  @include mq("tablet"){
+    width: 190px;
+  }
+
+  &-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.end_date_label{
+  margin-left: 0;
+    @include mq("tablet"){
+      margin-left: 20px;
+    }
+
+}
+.date-pick-form{
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+
+  flex-direction: column;
+  @include mq("tablet") {
+    flex-direction: row;
+  }
+
+
+  flex-grow: 1;
+  background: white;
+  border-radius: $border-radius;
+  padding:10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.datepicker-button{
+  box-shadow: 0 3px 8px 0 rgba(18, 5, 41, 0.2);
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+  flex-grow:1;
+  margin-left: 10px;
+  width: 100%;
+  border-radius: $border-radius;
+  padding-top: 10px;
+  border:0;
+  padding-bottom: 10px;
+  background-image: linear-gradient(to left,#08aeea,#17cec4);
+  color: #fff;
+
+  margin-top: 15px;
+    @include mq("tablet"){
+          margin-top: 0;
+    }
+}
+
+.end-date-container{
+  margin-top: 15px;
+    @include mq("tablet"){
+        margin-top: 0;
+    }
+}
