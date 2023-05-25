@@ -1,0 +1,12 @@
+{% load static %}
+{% load sass_tags %}
+<link href="{% sass_src 'dashboard.scss' %}" rel="stylesheet" type="text/css" />
+   <div class="slider">
+        <div class="carousel" data-flickity='{ "autoPlay": true }'>
+        {% for image in images %}
+            <a href="/">
+                <img class="carousel-cell" src="{% static image.image %}" alt="">
+            </a>
+        {% endfor %}
+        </div>
+    </div>

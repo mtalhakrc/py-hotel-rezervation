@@ -52,6 +52,9 @@
     .card-detail-comments {
       margin-bottom: 0.5rem;
       font-size: 0.86em; }
+    .card-detail-description {
+      font-size: 0.86em;
+      margin-top: 0.5rem; }
     .card-detail-location {
       font-size: 0.86em; }
   .card-footer {

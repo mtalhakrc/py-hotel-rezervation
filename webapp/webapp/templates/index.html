@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 {% load sass_tags %}
-  <link href="{% sass_src 'room_detail.scss' %}" rel="stylesheet" type="text/css" />
-
 
 {% block content %}
-
 <div class="container">
-    <!-- {% include "components/pick_a_date.html" %} -->
 
-    <h1>Odalar</h1>
-    {% if rooms %}
-        {% for room in rooms %}
+    <div class="slider-container">
+        <h3 style="display:inline-block;">en çok tutulan odalardan görüntüler xd ....</h3>
+        <a href="/search_room" class="discover" style="margin-left: auto; display: inline-block; text-decoration: underline; color: red;">Hayalinizdeki Odayı Keşfedin</a>
+        {% include "components/dasboard_slider.html" with images=ctx.images %}
+    </div>
+    <h1 class="title">MEVCUT ODALAR</h1>
+    {% if ctx.rooms %}
+        {% for room in ctx.rooms %}
         {% include "components/room_card/room_card.html" with room=room %}
-
     {% endfor %}
     {% else %}
         <h1>Aradığınız kriterlere uygun oda bulunamadı.</h1>

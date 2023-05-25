@@ -18,18 +18,19 @@ Including another URLconf
 """
 oldu paşam hemen yapalım: 
 
-Anasayfada slider şeklinde otel fotoğrafları olması lazım. Tasarım kısmı önemli bir yere sahip.
-Altında odalar başlığı altında tıkladığımızda oda detay sayfasına girmeliyiz 
-Oda detay sayfasında her odada 
-5-6 fotoğraf,
-odaların özellikleri,
-Şuan rezerve için müsait olup olmadığı bilgileri verilmeli 
-Yukarıdaki navbar odalar,iletişim, hakkımızda olmalı ve sayfalara tıkladığımızda ilgili sayfanın template ine yönlendirmeli 
+Anasayfada slider şeklinde otel fotoğrafları olması lazım. Tasarım kısmı önemli bir yere sahip. OK
+Altında odalar başlığı altında tıkladığımızda oda detay sayfasına girmeliyiz OK 
+Oda detay sayfasında her odada  5-6 fotoğraf, OK odaların özellikleri, OK
+Şuan rezerve için müsait olup olmadığı bilgileri verilmeli OK
+Yukarıdaki navbar odalar,iletişim, hakkımızda olmalı ve sayfalara tıkladığımızda ilgili sayfanın template ine yönlendirmeli OK
+
+ 
 sonra : Sistemdeki müşteriler belirlenen iki tarih arasında en çok tutulan yada en az tutulan odayı görmeli. Sitede şuan böyle bir şey karşımıza çıkmıyor.
-aynen QnaQa: Müşteriler üye oldukları takdirde yaptırdıkları rezervasyonları görebilmeli.
-sonra: Şuan müsait olan dolu olan odaları, ileriki bir tarihte müsait ve dolu olan odaları kullanıcılar arama yaptıkları takdirde görebilmeli 
-aynenQnaq: Oda eğer müsait değilse takip et butonu olmalı. Rezervasyonlarım içinde takip ettikleri odaları da kullanıcılar görebilmeli. Oda boşaldığı zaman takibe alınan müşteriye istediğiniz oda şuan müsait diye mesaj gelmeli. 
+sonra: Şuan müsait olan dolu olan odaları, ileriki bir tarihte müsait ve dolu olan odaları kullanıcılar arama yaptıkları takdirde görebilmeli
 sonra : Adminler sitede toplam gelir ve en çok tutulan en az tutulan odalar için ciroyu görebilmeli
+
+aynen QnaQa: Müşteriler üye oldukları takdirde yaptırdıkları rezervasyonları görebilmeli. siktir git reis 
+aynenQnaq: Oda eğer müsait değilse takip et butonu olmalı. Rezervasyonlarım içinde takip ettikleri odaları da kullanıcılar görebilmeli. Oda boşaldığı zaman takibe alınan müşteriye istediğiniz oda şuan müsait diye mesaj gelmeli. siktir git reis 
 
 """
 from django.contrib import admin
@@ -41,8 +42,9 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index),
+    path("about_us/",views.about_us),
 
-    #  path("room_detail/search", views.room_search),
+    path("search_room", views.room_search),
 
     path("room_detail/<str:room_slug>/", views.room_detail, name="room-detail"),
 ]

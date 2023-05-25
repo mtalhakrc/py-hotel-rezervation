@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% load sass_tags %}
+
+{% block content %}
+ <link href="{% sass_src 'about_us.scss' %}" rel="stylesheet" type="text/css" />
+
+
+<div class="we-are-block">
+
+  <div id="about-us-section">
+
+    <div class="about-us-image">
+
+      <img src="https://digitalupgrade.com/images/lobbyimage_1.jpg" width="808" height="458" alt="Lobby Image">
+
+    </div>
+
+    <div class="about-us-info">
+
+      <h2>Lorem ipsum dolor sit amet.</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab at, distinctio dolor dolorum ea earum est et exercitationem labore laborum maxime minima molestiae molestias nemo, nihil nostrum sit temporibus velit?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet atque autem dolor, earum exercitationem fugit harum illum iure maxime necessitatibus neque nisi officia quasi quia repellat, reprehenderit suscipit temporibus.
+      </p>
+
+      <a href="#" title="About Us Button">ABOUT US</a>
+
+    </div>
+
+  </div>
+
+  <div id="history-section">
+
+    <div class="history-image">
+
+      <img src="https://digitalupgrade.com/images/building_pic.jpg" width="951" height="471" alt="Building Pic">
+
+    </div>
+
+    <div class="history-info">
+
+      <h2>Lorem ipsum dolor sit amet.</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet architecto aspernatur dolor doloribus eaque hic mollitia nam natus nihil nisi quasi, quos similique temporibus voluptatibus! Dolorum maxime reprehenderit voluptatem!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam beatae delectus deleniti distinctio, dolorem facilis illum iusto laudantium nobis numquam optio possimus qui quibusdam ratione reiciendis, sit suscipit vel.
+      </p>
+
+      <a href="#" title="History Button">HISTORY</a>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

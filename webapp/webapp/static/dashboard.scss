@@ -1,0 +1,18 @@
+@import "variable.scss";
+@import "mixin.scss";
+
+.slider-container{
+  margin-top: 40px;
+
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  color: $color-primary;
+}
+
+.dp-container{
+  margin-top: 40px;
+}

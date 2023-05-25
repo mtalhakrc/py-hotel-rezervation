@@ -3,10 +3,9 @@
   <link href="{% sass_src 'date_picker/date_picker.scss' %}" rel="stylesheet" type="text/css" />
 
 <div>
-    <h3>TARİH SEÇİN</h3>
-    <form action="/room/search" method="post" class="date-pick-form" >
+    <form action="/room/search" method="post" class="date-pick-form" style="width: 100%" >
          {% csrf_token %}
-        <div class="datepicker-container">
+        <div class="" style="width: 100%">
             <label class="datepicker-label start_date_label" for="start_date">Başlangıç Tarihi : </label>
             <input value="yyyy-mm-dd" class="datepicker start_date" type="date" name="start_date" id="start_date">
         </div>
@@ -21,3 +20,7 @@
         <button type="submit" class="datepicker-button">ARA</button>
     </form>
 </div>
+
+<script>
+
+</script>

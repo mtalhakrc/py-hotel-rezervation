@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% load sass_tags %}
+
+{% block content %}
+ <link href="{% sass_src 'search_room.scss' %}" rel="stylesheet" type="text/css" />
+            <link href="{% sass_src 'date_picker/date_picker.scss' %}" rel="stylesheet" type="text/css" />
+{% for room in ctx.rooms %}
+{{room.name}}
+{% endfor %}
+
+  <div class="container">
+      <div class="box">
+          <div class="box-buttons">
+             <a href="search_room?q=turnover">EN ÇOK CİRO YAPAN</a>
+             <a href="search_room?q=preferred">EN ÇOK TERCİH EDİLEN</a>
+             <a href="search_room?q=available">MÜSAİT OLANLAR</a>
+           </div>
+
+
+        <div>
+            <form action="/room/search" method="post" class="date-pick-form"  >
+         {% csrf_token %}
+        <div class="" style="width: 100%">
+            <label class="datepicker-label start_date_label" for="start_date">Başlangıç Tarihi : </label>
+            <input value="yyyy-mm-dd" class="datepicker start_date" type="date" name="start_date" id="start_date">
+        </div>
+        <div class="datepicker-container end-date-container">
+            <label class="datepicker-label end_date_label" for="end_date">Bitiş Tarihi : </label>
+            <input value="yyyy-mm-dd" class="datepicker end_date" type="date" name="end_date" id="end_date">
+        </div>
+                <button type="submit" class="datepicker-button">ARA</button>
+            </form>
+        </div>
+
+      </div>
+
+    <div class="content">
+
+    </div>
+  </div>
+
+<script>
+    var variable = "{{ deneme }}";
+  fetch('https://jsonplaceholder.typicode.com/todos', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      start_date: '2020-01-01',
+      end_date: '2020-01-02'
+    })
+  }).then(res => res.json()).then(data => console.log(data))
+
+  const getHighestTurnover = () =>{
+      alert('xd?')
+  }
+</script>
+
+{% endblock %}
