@@ -1,12 +1,33 @@
 {% load static %}
 {% load sass_tags %}
 <link href="{% sass_src 'dashboard.scss' %}" rel="stylesheet" type="text/css" />
+<!--   <div class="slider">-->
+<!--        <div class="carousel" data-flickity='{ "autoPlay": true }'>-->
+<!--        {% for image in images %}-->
+<!--            <a href="/">-->
+<!--                <img class="carousel-cell" src="{% static image.image %}" alt="">-->
+<!--            </a>-->
+<!--        {% endfor %}-->
+<!--        </div>-->
+<!--    </div>-->
+
    <div class="slider">
         <div class="carousel" data-flickity='{ "autoPlay": true }'>
-        {% for image in images %}
-            <a href="/">
-                <img class="carousel-cell" src="{% static image.image %}" alt="">
+        {% for roomwithimage in rooms %}
+            {% with room=roomwithimage.room %}
+            {% with image=roomwithimage.image %}
+                     <a href="{% url 'room-detail' room.slug %}">
+                         {% if image.0.image %}
+                <img width="500px" height="300px" class="carousel-cell" style="object-fit: cover" src="{% static image.0.image %}" alt="">
+                {% else %}
+                <img  width="500px" height="300px" class="carousel-cell" style="object-fit: cover" src="{% static 'room_card_default.jpg' %}" alt="">
+                {% endif %}
+
             </a>
+
+            {% endwith %}
+            {% endwith %}
         {% endfor %}
+
         </div>
     </div>

@@ -4,11 +4,14 @@
 
 
   <link href="{% sass_src 'room_card/room_card.scss' %}" rel="stylesheet" type="text/css" />
-{{room.images}}
   <div class="card" style="margin-top: 15px;">
       <div class="card-body">
 <!--          https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen,f_auto,h_248,q_auto,w_481/itemimages/17/36/17366806_v3.jpeg-->
-          <img src="{% static room.image.image %}" alt="">
+          {% if room.image.0.image %}
+            <img style="min-width: 350px;" src="{% static room.image.0.image %}" alt="">
+            {% else %}
+                <img style="min-width: 350px; height: 180px" src="{% static 'room_card_default.jpg' %}" alt="">
+            {% endif %}
           <div class="content">
           <div class="card-detail">
               <a href="{% url 'room-detail' room.room.slug %}">

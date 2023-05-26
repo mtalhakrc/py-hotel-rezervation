@@ -29,9 +29,6 @@ sonra : Sistemdeki müşteriler belirlenen iki tarih arasında en çok tutulan y
 sonra: Şuan müsait olan dolu olan odaları, ileriki bir tarihte müsait ve dolu olan odaları kullanıcılar arama yaptıkları takdirde görebilmeli
 sonra : Adminler sitede toplam gelir ve en çok tutulan en az tutulan odalar için ciroyu görebilmeli
 
-aynen QnaQa: Müşteriler üye oldukları takdirde yaptırdıkları rezervasyonları görebilmeli. siktir git reis 
-aynenQnaq: Oda eğer müsait değilse takip et butonu olmalı. Rezervasyonlarım içinde takip ettikleri odaları da kullanıcılar görebilmeli. Oda boşaldığı zaman takibe alınan müşteriye istediğiniz oda şuan müsait diye mesaj gelmeli. siktir git reis 
-
 """
 from django.contrib import admin
 from django.urls import path
@@ -45,6 +42,7 @@ urlpatterns = [
     path("about_us/",views.about_us),
 
     path("search_room", views.room_search),
+    path("search_room_by_date", views.room_search_by_date),
 
     path("room_detail/<str:room_slug>/", views.room_detail, name="room-detail"),
 ]

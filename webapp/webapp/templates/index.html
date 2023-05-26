@@ -3,14 +3,15 @@
 {% load sass_tags %}
 
 {% block content %}
+ <link href="{% sass_src 'dashboard.scss' %}" rel="stylesheet" type="text/css" />
 <div class="container">
-
     <div class="slider-container">
-        <h3 style="display:inline-block;">en çok tutulan odalardan görüntüler xd ....</h3>
-        <a href="/search_room" class="discover" style="margin-left: auto; display: inline-block; text-decoration: underline; color: red;">Hayalinizdeki Odayı Keşfedin</a>
-        {% include "components/dasboard_slider.html" with images=ctx.images %}
+        <h3 style="display:inline-block;">Kullanıcılarımız en çok bunları tercih etti:</h3>
+        {% include "components/dasboard_slider.html" with rooms=ctx.rooms %}
     </div>
+    <div class="title-container">
     <h1 class="title">MEVCUT ODALAR</h1>
+        </div>
     {% if ctx.rooms %}
         {% for room in ctx.rooms %}
         {% include "components/room_card/room_card.html" with room=room %}
@@ -18,6 +19,12 @@
     {% else %}
         <h1>Aradığınız kriterlere uygun oda bulunamadı.</h1>
     {% endif %}
+    <div>
 
+        <div class="cont-container">
+            <span class="cont">Aradığınızı bulamadınız mı?<a role="button" href="/search_room" class="discover" >Hayalinizdeki Odayı Keşfedin</a></span>
+        </div>
+
+    </div>
 </div>
 {% endblock %}

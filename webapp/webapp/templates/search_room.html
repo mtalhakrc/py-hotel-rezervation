@@ -6,7 +6,6 @@
  <link href="{% sass_src 'search_room.scss' %}" rel="stylesheet" type="text/css" />
             <link href="{% sass_src 'date_picker/date_picker.scss' %}" rel="stylesheet" type="text/css" />
 {% for room in ctx.rooms %}
-{{room.name}}
 {% endfor %}
 
   <div class="container">
@@ -18,10 +17,12 @@
            </div>
 
 
+
         <div>
-            <form action="/room/search" method="post" class="date-pick-form"  >
+            <form action="search_room_by_date" method="get" class=""  >
          {% csrf_token %}
-        <div class="" style="width: 100%">
+                <div class="date-pick-form">
+                            <div class="" style="width: 100%">
             <label class="datepicker-label start_date_label" for="start_date">Başlangıç Tarihi : </label>
             <input value="yyyy-mm-dd" class="datepicker start_date" type="date" name="start_date" id="start_date">
         </div>
@@ -30,32 +31,57 @@
             <input value="yyyy-mm-dd" class="datepicker end_date" type="date" name="end_date" id="end_date">
         </div>
                 <button type="submit" class="datepicker-button">ARA</button>
+                </div>
+                <div class="datepicker-options">
+                    <label for="">Seçilen tarihler arasında</label><select name="pref" id="">
+                        <option selected value="turnover">en çok ciro yapan</option>
+                        <option value="preferred">en çok tercih edilen</option>
+                        <option value="available">müsait olan</option>
+                        <option value="notavailable">müsait olmayan</option>
+                    </select>
+                </div>
             </form>
+
+
         </div>
 
       </div>
 
     <div class="content">
+        {% if ctx.rooms %}
+        <h3>Arama Sonuçları: </h3>
+        {% for room in ctx.rooms %}
+            {% include "components/room_card/room_card.html" with room=room %}
+        {% endfor %}
+
+        {% else %}
+            <h3>Aramaya başlayın...</h3>
+        {% endif %}
 
     </div>
   </div>
 
 <script>
-    var variable = "{{ deneme }}";
-  fetch('https://jsonplaceholder.typicode.com/todos', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      start_date: '2020-01-01',
-      end_date: '2020-01-02'
-    })
-  }).then(res => res.json()).then(data => console.log(data))
+    let err = "{{ctx.err}}";
+    if(err){
+        alert(err);
+    }
+    let options = document.querySelector('.datepicker-options');
+    function open(){
+        options.style.visibility = 'visible';
+        options.style.padding = '10px';
+        options.style.height = 'auto';
+    }
 
-  const getHighestTurnover = () =>{
-      alert('xd?')
-  }
+    document.getElementById("start_date").addEventListener('change', (e) => {
+       open();
+    });
+
+    document.getElementById("end_date").addEventListener('change', (e) => {
+        open();
+    });
+
+
+
 </script>
-
 {% endblock %}
